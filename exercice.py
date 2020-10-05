@@ -3,27 +3,34 @@
 
 from random import randint
 from structs import Queue, Stack
-
-
+# from collections import deque
 def reverse_data(data: list = None):
     # TODO: Demander 10 valeurs à l'utilisateur,
     # les stocker dans une structure de données,
     # et les retourner en ordre inverse, sans utiliser de liste.
-
     if data is None:
-        pass  # Demander les valeurs ici
-        #data.putmany([input() ])
+        # Demander les valeurs ici
+        data = Stack()
+        for _ in range(0, 2):
+            data.put(input("Data : "))
 
-    #reversed_data = None  # Stocker le résultat ici
-   
-    #return reversed_data
-    return reverse_data[::-1]
-
+        data_reversed = Stack()
+        for _ in range(0, len(data)):
+            data_reversed.put(data.get())
+        return data_reversed
 
 def delete_nth_from_stack(data: Stack, position: int) -> Stack:
     # TODO: Supprimer le énième (position) élément de data et retourner la nouvelle structure de données.
-    return data.get(position)
-    #return Stack()
+    s = Stack()
+    for i in range(data):
+        if i == len(data) - position:
+            data.get()
+        else:
+            s.put(data.get())
+
+    new_stack = Stack()
+    return new_stack.put_many([s.get() for _ in range(len(s))])
+
 
 
 def delete_nth_from_queue(data: Queue, position: int) -> Queue:
@@ -33,8 +40,13 @@ def delete_nth_from_queue(data: Queue, position: int) -> Queue:
 
 
 def sort_stack(data: Stack) -> Stack:
-    # TODO: Retourner la séquence triée
-    return data.sort()
+    # TODO: Retourner la séquence
+    values = []
+    for _ in range(len(data)):
+        values.append(data.get())
+    data.put_many(sorted(values))
+    return data
+
     #return Stack()
 
 
@@ -69,7 +81,7 @@ def main() -> None:
 
     lifo = Stack()
     lifo.put_many([randint(0, 1000) for _ in range(20)])
-    print(f"On ordonne une file: {sort_queue(lifo)}")
+    print(f"On ordonne une file: {sort_stack(lifo)}")
 
     fifo = Queue()
     fifo.put_many([randint(0, 1000) for _ in range(20)])

@@ -12,25 +12,30 @@ def reverse_data(data: list = None):
 
     if data is None:
         pass  # Demander les valeurs ici
+        #data.putmany([input() ])
 
-    reversed_data = None  # Stocker le résultat ici
-
-    return reversed_data
+    #reversed_data = None  # Stocker le résultat ici
+   
+    #return reversed_data
+    return reverse_data[::-1]
 
 
 def delete_nth_from_stack(data: Stack, position: int) -> Stack:
     # TODO: Supprimer le énième (position) élément de data et retourner la nouvelle structure de données.
-    return Stack()
+    return data.get(position)
+    #return Stack()
 
 
 def delete_nth_from_queue(data: Queue, position: int) -> Queue:
     # TODO: Supprimer le énième (position) élément de data et retourner la nouvelle structure de données.
-    return Queue()
+    return data.get(position)
+    #return Queue()
 
 
 def sort_stack(data: Stack) -> Stack:
     # TODO: Retourner la séquence triée
-    return Stack()
+    return data.sort()
+    #return Stack()
 
 
 def sort_queue(data: Queue) -> Queue:

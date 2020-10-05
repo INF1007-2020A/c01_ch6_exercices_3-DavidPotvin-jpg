@@ -1,39 +1,19 @@
 test_delete_queue (__main__.TestExercice) ... FAIL
-test_delete_stack (__main__.TestExercice) ... FAIL
-test_reverse (__main__.TestExercice) ... ERROR
-test_sort_queue (__main__.TestExercice) ... ERROR
-test_sort_stack (__main__.TestExercice) ... ERROR
+test_delete_stack (__main__.TestExercice) ... ERROR
+test_reverse (__main__.TestExercice) ... FAIL
+test_sort_queue (__main__.TestExercice) ... FAIL
+test_sort_stack (__main__.TestExercice) ... FAIL
 test_string_and_structs (__main__.TestExercice) ... ERROR
 
 ======================================================================
-ERROR: test_reverse (__main__.TestExercice)
+ERROR: test_delete_stack (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "test_exercice.py", line 17, in test_reverse
-    output = exercice.reverse_data(values)
-  File "/home/runner/work/c01_ch6_exercices_3-DavidPotvin-jpg/c01_ch6_exercices_3-DavidPotvin-jpg/exercice.py", line 20, in reverse_data
-    return reverse_data[::-1]
-TypeError: 'function' object is not subscriptable
-
-======================================================================
-ERROR: test_sort_queue (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 76, in test_sort_queue
-    output = exercice.sort_stack(fifo)
-  File "/home/runner/work/c01_ch6_exercices_3-DavidPotvin-jpg/c01_ch6_exercices_3-DavidPotvin-jpg/exercice.py", line 37, in sort_stack
-    return data.sort()
-AttributeError: 'Queue' object has no attribute 'sort'
-
-======================================================================
-ERROR: test_sort_stack (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 61, in test_sort_stack
-    output = exercice.sort_stack(lifo)
-  File "/home/runner/work/c01_ch6_exercices_3-DavidPotvin-jpg/c01_ch6_exercices_3-DavidPotvin-jpg/exercice.py", line 37, in sort_stack
-    return data.sort()
-AttributeError: 'Stack' object has no attribute 'sort'
+  File "test_exercice.py", line 33, in test_delete_stack
+    output = exercice.delete_nth_from_stack(lifo, len(lifo) - 1)
+  File "/home/runner/work/c01_ch6_exercices_3-DavidPotvin-jpg/c01_ch6_exercices_3-DavidPotvin-jpg/exercice.py", line 25, in delete_nth_from_stack
+    for i in range(data):
+TypeError: 'Stack' object cannot be interpreted as an integer
 
 ======================================================================
 ERROR: test_string_and_structs (__main__.TestExercice)
@@ -52,14 +32,30 @@ Traceback (most recent call last):
 AssertionError: 0 != [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] : Mauvaise reponse
 
 ======================================================================
-FAIL: test_delete_stack (__main__.TestExercice)
+FAIL: test_reverse (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "test_exercice.py", line 38, in test_delete_stack
+  File "test_exercice.py", line 23, in test_reverse
     'Mauvaise reponse'
-AssertionError: 19 != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] : Mauvaise reponse
+AssertionError: First sequence is not a list: None
+
+======================================================================
+FAIL: test_sort_queue (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 83, in test_sort_queue
+    'Mauvaise reponse'
+AssertionError: [55, [30 chars]48, 260, 451, 508, 511, 617, 631, 634, 654, 749, 935, 950, 963] != [55, [30 chars]48, 260, 451, 508, 511, 617, 631, 634, 654, 749, 935, 950, 963] : Mauvaise reponse
+
+======================================================================
+FAIL: test_sort_stack (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 68, in test_sort_stack
+    'Mauvaise reponse'
+AssertionError: [67, [31 chars]68, 623, 719, 770, 777, 824, 865, 873, 874, 913, 926, 928, 943] != [67, [31 chars]68, 623, 719, 770, 777, 824, 865, 873, 874, 913, 926, 928, 943] : Mauvaise reponse
 
 ----------------------------------------------------------------------
 Ran 6 tests in 0.002s
 
-FAILED (failures=2, errors=4)
+FAILED (failures=4, errors=2)
